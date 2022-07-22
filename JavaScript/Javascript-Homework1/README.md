@@ -1,2 +1,2 @@
 # Patika Homework
-![img](Javascript-Homework1/date.png)
+![img](date.png)
