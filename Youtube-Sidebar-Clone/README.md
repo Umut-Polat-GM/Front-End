@@ -1,5 +1,11 @@
 # Youtube Sidebar Project
+Project <a href="https://youtube-sidebar-clone.netlify.app/">link<a>
+
+<hr>
+
 ![img](img/Yotube-clone.gif)
+
+<hr>
 
 ## Gains
 - DOM manipulations techniques
