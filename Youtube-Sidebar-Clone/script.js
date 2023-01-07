@@ -29,3 +29,22 @@ const resizeObserver = new ResizeObserver((entries) => { // Resize Listener
 })
 // we need to call the listner on resizing page
 resizeObserver.observe(document.querySelector('.js-aside-nav'))
+
+//sidebar active buttons
+const asideBtn = document.querySelector(".sidebar");
+const asideActive = document.querySelectorAll(".nav-link")
+
+asideBtn.addEventListener('click', function(e){
+    //we need current target id or parrentElement id
+    const id = e.target.id;
+    const parrentId = e.target.parentElement.id
+    if(id || parrentId) {
+        //first remove all active class
+        asideActive.forEach( (activeBtn) => {
+            activeBtn.classList.remove('active')
+        })
+        //After add active class
+        e.target.classList.add('active')
+        e.target.parentElement.classList.add('active')
+    }
+})
