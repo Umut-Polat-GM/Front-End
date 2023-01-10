@@ -3,15 +3,23 @@ import Header from './header'
 import Main from './main'
 import Footer from './footer'
 
-const sections = ({todos, setTodos}) => {
-    console.log(todos);
+const Sections = ({todos, setTodos, deleteTodo}) => {
+
   return (
-    <sections className="todoapp">
-        <Header />
-        <Main />
-        <Footer />
-    </sections>
+    <div className="todoapp">
+        <Header 
+          todos={todos} 
+          setTodos={setTodos} 
+        />
+        <Main 
+          todos={todos}
+          deleteTodo={deleteTodo}
+        />
+        <Footer
+          todos={todos}
+        />
+    </div>
   )
 }
 
-export default sections
+export default Sections

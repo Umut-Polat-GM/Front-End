@@ -1,38 +1,56 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 
-const main = () => {
+const main = ({todos, deleteTodo}) => {
+    const todosElemens = todos.map((todo) => {
+        return (
+            <li key={todo.id}>
+                <div className="view">
+                    <input className="toggle" type="checkbox" />
+                    <label>{todo.text}</label>
+                    <button className="destroy" onClick={()=> {
+                        deleteTodo(todo.id)
+                        toast.error("Deleted")
+                    }}></button>
+                </div>
+            </li>
+        )
+    })
+
   return (
-    <section class="main">
-        <input class="toggle-all" type="checkbox" />
-        <label for="toggle-all">
+    <section className="main">
+        <input className="toggle-all" type="checkbox" />
+        <label htmlFor="toggle-all">
             Mark all as complete
         </label>
 
-        <ul class="todo-list">
-            <li class="completed">
-                <div class="view">
-                    <input class="toggle" type="checkbox" />
-                    <label>Learn JavaScript</label>
-                    <button class="destroy"></button>
-                </div>
-            </li>
-            <li>
-                <div class="view">
-                    <input class="toggle" type="checkbox" />
-                    <label>Learn React</label>
-                    <button class="destroy"></button>
-                </div>
-            </li>
-            <li>
-                <div class="view">
-                    <input class="toggle" type="checkbox" />
-                    <label>Have a life!</label>
-                    <button class="destroy"></button>
-                </div>
-            </li>
+        <ul className="todo-list">
+            {todosElemens}
         </ul>
     </section>
   )
 }
 
 export default main
+
+            // <li className="completed">
+            //     <div className="view">
+            //         <input className="toggle" type="checkbox" />
+            //         <label>Learn JavaScript</label>
+            //         <button className="destroy"></button>
+            //     </div>
+            // </li>
+            // <li>
+            //     <div className="view">
+            //         <input className="toggle" type="checkbox" />
+            //         <label>Learn React</label>
+            //         <button className="destroy"></button>
+            //     </div>
+            // </li>
+            // <li>
+            //     <div className="view">
+            //         <input className="toggle" type="checkbox" />
+            //         <label>Have a life!</label>
+            //         <button className="destroy"></button>
+            //     </div>
+            // </li>

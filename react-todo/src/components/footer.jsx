@@ -1,30 +1,33 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 
-const footer = () => {
+const Footer = ({todos}) => {
+
+
   return (
-        <footer class="footer">
-            <span class="todo-count">
-                <strong>2</strong>
-                items left
+        <footer className="footer">
+            <span className="todo-count">
+                <strong>{todos.length}</strong>
+                _items left
             </span>
 
-            <ul class="filters">
+            <ul className="filters">
                 <li>
-                    <a href="#/" class="selected">All</a>
+                    <a id='a1' href="#/" className='selected'>All</a>
                 </li>
                 <li>
-                    <a href="#/">Active</a>
+                    <a id='a2' href="#/" className=''>Active</a>
                 </li>
                 <li>
-                    <a href="#/">Completed</a>
+                    <a id='a3' href="#/" className=''>Completed</a>
                 </li>
             </ul>
 
-            <button class="clear-completed">
+            <button className="clear-completed">
                 Clear completed
             </button>
         </footer>
   )
 }
 
-export default footer
+export default Footer
