@@ -1,12 +1,25 @@
 import React from 'react'
 import { toast } from 'react-toastify'
 
-const main = ({todos, deleteTodo}) => {
+const main = ({todos, setTodos, deleteTodo}) => {
+
+    const isActive = (id) => {
+        setTodos(todos.map( todo => {
+            if(todo.id === id) {
+                todo.active = !todo.active
+                return todo
+            }
+
+            return todo
+        }))
+    }
+    
+
     const todosElemens = todos.map((todo) => {
         return (
-            <li key={todo.id}>
+            <li key={todo.id} className={todo.active ? "" : "completed"}>
                 <div className="view">
-                    <input className="toggle" type="checkbox" />
+                    <input className="toggle" type="checkbox" onClick={() => isActive(todo.id)}/>
                     <label>{todo.text}</label>
                     <button className="destroy" onClick={()=> {
                         deleteTodo(todo.id)

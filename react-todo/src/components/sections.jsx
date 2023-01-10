@@ -13,10 +13,12 @@ const Sections = ({todos, setTodos, deleteTodo}) => {
         />
         <Main 
           todos={todos}
+          setTodos={setTodos}
           deleteTodo={deleteTodo}
         />
         <Footer
           todos={todos}
+          setTodos={setTodos}
         />
     </div>
   )

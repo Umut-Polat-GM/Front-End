@@ -11,6 +11,7 @@ function App() {
       {
         text:"", 
         id:0,
+        active:true
       }
     ])
 

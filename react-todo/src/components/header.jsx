@@ -12,7 +12,7 @@ const Header = ({todos, setTodos}) => {
         toast.warning('Todo already exist!')
     }else {
         const newTodo = todoValue.trim()
-        setTodos([...todos, {text:newTodo, id:nanoid()}])
+        setTodos([...todos, {text:newTodo, id:nanoid(), active:true}])
         toast.success('Todo added!')
     }
     setTodoValue('')
