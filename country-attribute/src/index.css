@@ -1,0 +1,105 @@
+
+.App {
+  font-family: sans-serif;
+}
+
+.App > h1 {
+  font-size: 20px;
+  background: #222;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+.App > h1 > img {
+  height: 16px;
+}
+.country {
+  border: 1px solid #e1e1e2;
+  padding: 8px;
+  margin: 0 0 5px 0;
+  border-radius: 5px;
+}
+.country > h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.country:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.single {
+    display: flex;
+    flex-direction: column;
+}
+
+.single > h1{
+    font-size: 2rem;
+    background-color: #000;
+    color: #fff;
+    width: 96%;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: .4rem;
+}
+
+.explain {
+    display: flex;
+}
+.explain > img{
+    width: 30%;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px #000, -.2em 0 .2em #000;
+}
+.info{
+    width: 50%;
+    padding: 2rem;
+}
+
+.link{
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+/* CSS */
+.button-92 {
+  --c: #fff;
+  /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #004dff;
+  /* background color */
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset: .1em;
+  transition: 0.3s;
+  border-radius: .4rem;
+}
+
+.button-92:hover,
+.button-92:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.button-92:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9q #0005;
+  transition: 0s;
+}
+
+.button-92 {
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: .1em .3em;
+  margin: 1rem;
+}
