@@ -10,7 +10,11 @@ function App() {
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
-      .then(response => setCountries(response.data))
+      .then(response => {
+        // setCountries(response.data)
+        console.log(response.data)
+      })
+      
       .catch(error => console.log({ error }));
   }, []);
 
@@ -46,7 +50,7 @@ function Country({ countries }) {
 
   return (
     <div className="single">
-      <h1>{country.name.common}</h1>
+      {/* <h1>{country?.name.common}</h1>
       <div className="explain">
         <img src={country.flags.svg} alt={country.name.common} />
         <div className="info">
@@ -57,7 +61,7 @@ function Country({ countries }) {
           <p><a href={country.maps.openStreetMaps} target="_blank">Location</a></p>
           <Link to="/"><button className="button-92" role="button">Back</button></Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -2,29 +2,37 @@ import React from 'react'
 import { useState } from 'react'
 
 const Footer = ({todos, setTodos}) => {
-    
-    const [activeValue, setActiveValue] = useState(todos)
 
-    
-    // useEffect(()=>{
-    //     setActiveValue(()=> todos)
-    // }, [todos])
+    const [values, setValues] = useState(todos)
+    const [filter, setFilter] = useState("all");
 
-    console.log(activeValue)
-
-    const addSelected = (e) => {
+    const handleFilterClick  = (e, filterType ) => {
         document.querySelectorAll(".selected").forEach(e => e.classList.remove('selected'));
         e.target.classList.add('selected')
-        setTodos(activeValue)
-        if(e.target.id === "a1"){
-            setTodos(activeValue)
-        }else if(e.target.id === "a2"){
-            setTodos(todos.filter((todo) => todo.active === true))
-        }else if(e.target.id === "a3"){
-            setTodos(todos.filter((todo) => todo.active === false))
-        }
+
+        setFilter(filterType)
+        setTodos(values)
+        setTodos(filterTodos(filterType, todos))
+        console.log(filterTodos(filterType, todos));
         
     }
+    const filterTodos = (filterType, todos) => {
+        switch (filterType) {
+          case "All":
+            return todos;
+          case "Active":
+            return todos.filter(todo => todo.active === true);
+          case "Completed":
+            return todos.filter(todo => todo.active === false);
+          default:
+            return todos;
+        }
+      };
+
+      const allClear = () => {
+        setTodos([])
+        setValues([])
+      }
 
   return (
         <footer className="footer">
@@ -35,17 +43,17 @@ const Footer = ({todos, setTodos}) => {
 
             <ul className="filters">
                 <li>
-                    <a id='a1' href="#/" className='selected' onClick={(e)=>addSelected(e)}>All</a>
+                    <a href="#/" className='selected' onClick={(e)=>handleFilterClick (e, "All")}>All</a>
                 </li>
                 <li>
-                    <a id='a2' href="#/" className='' onClick={(e)=>addSelected(e)}>Active</a>
+                    <a href="#/" className='' onClick={(e)=>handleFilterClick (e, "Active")}>Active</a>
                 </li>
                 <li>
-                    <a id='a3' href="#/" className='' onClick={(e)=>addSelected(e)}>Completed</a>
+                    <a href="#/" className='' onClick={(e)=>handleFilterClick (e, "Completed")}>Completed</a>
                 </li>
             </ul>
 
-            <button className="clear-completed">
+            <button className="clear-completed" onClick={allClear}>
                 Clear completed
             </button>
         </footer>

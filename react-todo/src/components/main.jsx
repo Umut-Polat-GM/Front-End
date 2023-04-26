@@ -19,7 +19,7 @@ const main = ({todos, setTodos, deleteTodo}) => {
         return (
             <li key={todo.id} className={todo.active ? "" : "completed"}>
                 <div className="view">
-                    <input className="toggle" type="checkbox" onClick={() => isActive(todo.id)}/>
+                    <input className="toggle" type="checkbox" value={todo.active} onClick={() => isActive(todo.id)}/>
                     <label>{todo.text}</label>
                     <button className="destroy" onClick={()=> {
                         deleteTodo(todo.id)
