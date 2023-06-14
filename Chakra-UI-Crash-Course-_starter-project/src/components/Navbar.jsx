@@ -12,8 +12,8 @@ import React from "react";
 function Navbar() {
   return (
     <div>
-      <Flex bg={"grey"} p={".4rem"} alignItems={"center"}>
-        <Heading color={"orange.400"}>Umut Task</Heading>
+      <Flex p={".4rem"} alignItems={"center"}>
+        <Heading>Umut Task</Heading>
         <Spacer />
         <HStack spacing={"1.4rem"}>
           <Box bg={"gray.200"} p={".6rem"} borderRadius={"md"} fontWeight={"bold"}>M</Box>
@@ -22,7 +22,7 @@ function Navbar() {
         </HStack>
       </Flex>
 
-      {/* <Flex bg={'grey'} justify={`space-between`}>
+      {/* <Flex bg={'gray.200'} justify={`space-between`}>
         <Box w={`100px`} h={`100px`} bg={`yellow.200`}>1</Box>
         <Box w={`100px`} h={`100px`} bg={`blue.200`}>2</Box>
         <Box w={`100px`} h={`100px`} bg={`orange.200`} flexGrow={3}>3</Box>

@@ -1,33 +1,27 @@
-import { Container, Heading, Text, Box } from "@chakra-ui/react";
+import { SimpleGrid, Box } from '@chakra-ui/react'
+import React from 'react'
 
-export default function Dashboard() {
-
-  const boxStyle = {
-    p:".5rem",
-    color:"red",
-    bg:"blue.300",
-    textAlign:"center",
-    borderRadius:"md",
-    filter:"drop-shadow(0 0 0.5rem blue)",
-    transeition:"all .5s ease",
-    _hover:{
-      bg:"yellow.400",
-      color:"black",
-    }
-  }
-
+function Dashboard() {
   return (
-    <Container as={"section"} maxWidth={"4xl"} py={"1rem"}>
-      <Heading my="2rem" p=".5rem">Chakra UI Components</Heading>
-      <Text marginLeft="1rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, voluptatem.</Text>
-      <Text ml="1rem" color={"blue.300"} fontWeight={"bold"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, voluptatem.</Text>
+    <SimpleGrid p="10px" spacing={10} minChildWidth={"250px"}>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid">
+        <Text>Hello</Text>
+      </Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
 
-      <Box my={"2rem"} bg={"orange.300"} p={"1rem"}>
-        <Text color={"black"}>Lorem ipsum dolor sit amet.</Text>
-      </Box>
-      <Box sx={boxStyle}>
-        <Text> Hello Umut</Text>
-      </Box>
-    </Container>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+      <Box bg={"white"} w={"200px"} h="200px" border="1px solid"></Box>
+    </SimpleGrid>
   )
 }
+
+export default Dashboard
