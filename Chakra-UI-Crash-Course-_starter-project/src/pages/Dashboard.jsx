@@ -12,6 +12,7 @@ import {
   HStack,
   Button,
   Divider,
+  Avatar,
 } from "@chakra-ui/react";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
@@ -31,9 +32,7 @@ function Dashboard() {
           >
             <CardHeader>
               <Flex gap={3}>
-                <Box w="50px" h={"50px"}>
-                  <Text>AV</Text>
-                </Box>
+                <Avatar src={task.img} />
                 <Box>
                   <Heading as="h3" size={"dm"}>
                     {task.title}
