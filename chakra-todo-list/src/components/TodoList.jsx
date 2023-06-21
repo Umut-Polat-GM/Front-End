@@ -7,16 +7,19 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
+import { MainContext } from "../context";
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList() {
+  const { todos, deleteTodo } = useContext(MainContext);
 
-  if(!todos.length){
+  if (!todos.length) {
     return (
-      <Badge>
+      <Badge colorScheme="green" p={"4"} m={"4"} borderRadius={"lg"}>
         No Todos, yay!!!
       </Badge>
-    )
+    );
   }
 
   return (
@@ -34,7 +37,11 @@ function TodoList({ todos, deleteTodo }) {
         <HStack key={todo.id}>
           <Text>{todo.body}</Text>
           <Spacer />
-          <IconButton icon={<FaTrash />} isRound="true" onClick={() => deleteTodo(todo.id)} />
+          <IconButton
+            icon={<FaTrash />}
+            isRound="true"
+            onClick={() => deleteTodo(todo.id)}
+          />
         </HStack>
       ))}
     </VStack>
