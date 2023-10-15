@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.primary-nav {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.primary-nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.primary-nav a:hover {
+  color: #ccc;
+}
+
+.primary-nav a.active {
+  color: white;
+  font-weight: bold;
+}
